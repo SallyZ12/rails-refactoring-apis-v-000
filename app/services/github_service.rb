@@ -8,13 +8,13 @@ attr_reader :access_token
 
   def authenticate!(client_id, client_secret, code)
     response = Faraday.post "https://github.com/login/oauth/access_token" do |req|
-      req.body = {client_id: client_id, client_secret: client_secret, code: code}
+      req.body = {'client_id': client_id, 'client_secret': client_secret, 'code': code}
       req.headers['Accept'] = 'application/json'
     end
 
       access_hash = JSON.parse(response.body)
       @access_token = access_hash["access_token"]
-
+    
   end
 
 
@@ -43,6 +43,7 @@ attr_reader :access_token
     end
     repos_array = JSON.parse(response.body)
     repos_array.map {|repo|GithubRepo.new(repo)}
+
   end
 
 

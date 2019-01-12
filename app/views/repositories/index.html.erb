@@ -13,7 +13,7 @@
   <ul>
   <% @repo_data.each do |repo| %>
   <li>
-    <%= link_to repo.name %>
+    <%= link_to repo.name, repo.url %>
     <% end %>
   </li>
 </ul>
