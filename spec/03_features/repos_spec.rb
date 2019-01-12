@@ -3,9 +3,8 @@ require_relative '../spec_helper'
 describe "Features" do
   describe "authentication" do
     it "displays the username on the page" do
-      #commented out the following since a problem with WebMock
-      # visit '/auth?code=20'
-      # expect(page).to have_content 'your_username'
+      visit '/auth?code=20'
+      expect(page).to have_content 'your_username'
     end
   end
 

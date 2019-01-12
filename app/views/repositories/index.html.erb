@@ -1,6 +1,7 @@
 
 <div class = "container">
-  <h1> <%= session[:user_name] %>'s Repos</h1>
+  <h1> <%= session[:username] %>'s Repos</h1>
+
   <!-- List repositories and display username here! -->
 
   <%= form_tag("/repositories/create", method: "post") do %>
